@@ -16,6 +16,11 @@ export default async function handler(
   }
 
   try {
+    // Set CORS headers
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
     const languageData = await prisma.languageData.findUnique({
       where: { id: "669c326b6d387c09e564ba9a" }, // Ensure this matches the ID used in your update logic
     });
