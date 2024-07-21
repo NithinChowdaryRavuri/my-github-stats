@@ -142,5 +142,5 @@ export default async function handler(
   });
 
   // Respond with the collected data
-  res.status(200);
+  res.status(200).json(allRepoData);
 }
